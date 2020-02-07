@@ -13,8 +13,7 @@ public class DemoSecurityConfig
         extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        // add our users for in memory authentication
-        User.UserBuilder users = User.withDefaultPasswordEncoder();
+         User.UserBuilder users = User.withDefaultPasswordEncoder();
 
         auth.inMemoryAuthentication().withUser(users.username("john").password("test123").roles("EMPLOYEE"));
 
